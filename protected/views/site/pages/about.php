@@ -6,7 +6,14 @@ $this->breadcrumbs=array(
 	'About',
 );
 ?>
-<h1>About</h1>
+<h1>Sobre DrumTeach</h1>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <code><?php echo __FILE__; ?></code>.</p>
+<p>DrumTeach es un proyecto personal que me permite estar al corriente de mis progresos con mis clases de batería.</p>
+
+<p>El único propósito por el que desarrollo esta aplicación es para poder tener la información que necesito, relacionada con mis clases de batería, en cualquier momento y en cualquier lugar, gracias a la presencia de los smartphones, que hoy en día te permiten conectarte a la red desde casi cualquier sitio</p>
+
+<p>Aunque la aplicación está destinada a mi uso personal, he decido hacerla multiusuario, para que cualquiera la pueda utilizar igual que yo.</p>
+
+<p><strong>Esto es totalmente gratis y totalmente desinteresado.</strong> No pretendo beneficiarme económicamente de esto. No existe modelo de negocio. Si te resulta útil, la usas y ya está ;-)</p>
+
+<p></p>

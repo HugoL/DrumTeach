@@ -47,14 +47,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><?php echo Yii::app()->name ?></a>
+				<a class="brand" href="index"><?php echo Yii::app()->name ?></a>
 				<div class="nav-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
 						'activeCssClass'	=> 'active',
 						'items'=>array(
-							array('label'=>'Home', 'url'=>array('/site/index')),
-							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+							array('label'=>'Sobre DrumTeach', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),
 							array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
@@ -87,57 +86,11 @@
 	</div><!--/.fluid-container-->
 	</div>
 	
-	<div class="extra">
-	  <div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<h4>Heading 1</h4>
-				<ul>
-					<li><a href="#">Subheading 1.1</a></li>
-					<li><a href="#">Subheading 1.2</a></li>
-					<li><a href="#">Subheading 1.3</a></li>
-					<li><a href="#">Subheading 1.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 2</h4>
-				<ul>
-					<li><a href="#">Subheading 2.1</a></li>
-					<li><a href="#">Subheading 2.2</a></li>
-					<li><a href="#">Subheading 2.3</a></li>
-					<li><a href="#">Subheading 2.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 3</h4>	
-				<ul>
-					<li><a href="#">Subheading 3.1</a></li>
-					<li><a href="#">Subheading 3.2</a></li>
-					<li><a href="#">Subheading 3.3</a></li>
-					<li><a href="#">Subheading 3.4</a></li>
-				</ul>
-			</div> <!-- /span3 -->
-			
-			<div class="col-md-3">
-				<h4>Heading 4</h4>
-				<ul>
-					<li><a href="#">Subheading 4.1</a></li>
-					<li><a href="#">Subheading 4.2</a></li>
-					<li><a href="#">Subheading 4.3</a></li>
-					<li><a href="#">Subheading 4.4</a></li>
-				</ul>
-				</div> <!-- /span3 -->
-			</div> <!-- /row -->
-		</div> <!-- /container -->
-	</div>
-	
 	<div class="footer">
 	  <div class="container">
 		<div class="row">
 			<div id="footer-copyright" class="col-md-6">
-				About us | Contact us | Terms & Conditions
+				Sobre DrumTeach | Contáctame | Términos y Condiciones
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
 				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
