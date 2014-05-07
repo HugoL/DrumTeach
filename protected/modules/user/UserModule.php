@@ -10,6 +10,7 @@
 
 class UserModule extends CWebModule
 {
+	public $layout='//layouts/column2';
 	/**
 	 * @var int
 	 * @desc items on page
@@ -121,7 +122,7 @@ class UserModule extends CWebModule
 
 	public function beforeControllerAction($controller, $action)
 	{
-		Yii::app()->theme = 'blackboot';
+		Yii::app()->theme = 'blackboot';		
 		if(parent::beforeControllerAction($controller, $action))
 		{
 			// this method is called before any module controller action is performed

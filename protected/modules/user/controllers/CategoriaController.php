@@ -28,11 +28,11 @@ class CategoriaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'actions'=>array('index','view','categoriasUsuario'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete',),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -120,6 +120,26 @@ class CategoriaController extends Controller
 	{
 		$dataProvider=new CActiveDataProvider('Categoria');
 		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	public function actionCategoriasUsuario(){
+		$dataProvider=new CActiveDataProvider('Categoria',array(
+    			'criteria'=>array(    
+    			'distinct'=>true,			
+    			'join' => 'INNER JOIN dt_ejercicios ejercicios ON ejercicios.id_categoria = t.id AND ejercicios.id_usuario='.Yii::app()->user->id,
+   		 	    ),
+
+    		)
+		);
+
+		Categoria::model()->with(array(
+		    'author'=>array('select'=>'id, name'),
+		    'comments'=>array('condition'=>'approved=1', 'order'=>'create_time'),
+		))->findAll();
+		
+		$this->render('categoriasUsuario',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

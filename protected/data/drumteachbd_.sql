@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-05-2014 a las 14:10:52
+-- Tiempo de generación: 07-05-2014 a las 14:11:29
 -- Versión del servidor: 5.6.15-log
 -- Versión de PHP: 5.2.17
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `dt_categorias` (
   `nombre` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `dt_categorias`
@@ -81,7 +81,11 @@ CREATE TABLE IF NOT EXISTS `dt_categorias` (
 
 INSERT INTO `dt_categorias` (`id`, `nombre`, `descripcion`) VALUES
 (1, 'Lectura', 'Ejercicios de lectura'),
-(2, 'Técnica', 'Ejercicios para desarrolla la técnica');
+(2, 'Técnica', 'Ejercicios para desarrolla la técnica'),
+(3, 'Esquemas', 'Ejercicios de esquemas simples, tresillos, paradiddles...'),
+(4, 'Secciones', 'Ejercicios de la Sección A, Sección B, Sección E, etc...'),
+(5, 'Linear Drumming', 'Ejercicios DPIP, DPI, PDI, X, Z, etc...'),
+(6, 'Lectura Doble Pedal', 'Ejercicios de lectura con el doble pedal');
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `dt_ejercicios` (
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`),
   KEY `id_categoria` (`id_categoria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `dt_ejercicios`
@@ -108,7 +112,8 @@ CREATE TABLE IF NOT EXISTS `dt_ejercicios` (
 INSERT INTO `dt_ejercicios` (`id`, `nombre`, `velocidad`, `observaciones`, `id_usuario`, `id_categoria`) VALUES
 (1, 'FastJazz', '210', NULL, 2, 1),
 (2, 'Esquema Simple', '125', '', 3, 1),
-(3, 'Esquema Redoble', '195', 'Hacer bien lo de los dedos', 3, 1);
+(3, 'Esquema Redoble', '195', 'Hacer bien lo de los dedos', 3, 1),
+(4, 'UpDown', '168', '', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -197,9 +202,9 @@ CREATE TABLE IF NOT EXISTS `dt_users` (
 --
 
 INSERT INTO `dt_users` (`id`, `username`, `password`, `email`, `activkey`, `createtime`, `lastvisit_at`, `superuser`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', 1261146094, 1399367854, 1, 1),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', 1261146094, 1399463586, 1, 1),
 (2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', 1261146096, 0, 0, 1),
-(3, 'hlanga', '9f3b66241bafdb3e7d3190394029368b', 'hlanga@hlanga.es', 'aacede64e77075372830ae79a3e801bb', 1399368092, 1399372140, 0, 1);
+(3, 'hlanga', '9f3b66241bafdb3e7d3190394029368b', 'hlanga@hlanga.es', 'aacede64e77075372830ae79a3e801bb', 1399368092, 1399463951, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -259,8 +264,8 @@ ALTER TABLE `authitemchild`
 -- Filtros para la tabla `dt_ejercicios`
 --
 ALTER TABLE `dt_ejercicios`
-  ADD CONSTRAINT `dt_ejercicios_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `dt_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `dt_ejercicios_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `dt_categorias` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `dt_ejercicios_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `dt_categorias` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `dt_ejercicios_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `dt_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `rights`

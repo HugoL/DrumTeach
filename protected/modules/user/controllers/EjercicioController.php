@@ -32,7 +32,7 @@ class EjercicioController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','ejerciciosCategorias'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -124,11 +124,11 @@ class EjercicioController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Ejercicio',array(
-    'criteria'=>array(
-        'condition'=>'id_usuario='.Yii::app()->user->id,
-    	),
-    	)
+    			'criteria'=>array(
+   		 	    'condition'=>'id_usuario='.Yii::app()->user->id),
+    		)
 		);
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -146,6 +146,34 @@ class EjercicioController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
+		));
+	}
+
+	public function actionEjerciciosCategorias()
+	{
+		/*$ejercicios=new CActiveDataProvider('Ejercicio',array(
+    			'criteria'=>array(
+        		'condition'=>'id_usuario='.Yii::app()->user->id,),
+    		)
+		);*/
+
+		//$categorias=new CActiveDataProvider('Categoria');
+
+		$ejercicios = Ejercicio::model()->with(array(
+		    'categoria'=>array('select'=>'id, nombre'),
+		    'together' => true,
+		))->findAll('id_usuario = '.Yii::app()->user->id);
+		
+		$categorias = array();
+
+		foreach ( $ejercicios as $key => $ejercicio ) {
+        		if( !in_array($ejercicio->categoria->nombre, $categorias, true) ){
+        			array_push( $categorias, $ejercicio->categoria->nombre );
+        		}
+		}
+
+		$this->render('verEjercicios',array(
+			'ejercicios'=>$ejercicios,'categorias'=>$categorias
 		));
 	}
 
@@ -175,5 +203,16 @@ class EjercicioController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	/* Used to debug variables*/
+	protected function Debug($var){
+		$bt = debug_backtrace();
+		$dump = new CVarDumper();
+		$debug = '<div style="display:block;background-color:gold;border-radius:10px;border:solid 1px brown;padding:10px;z-index:10000;"><pre>';
+		$debug .= '<h4>function: '.$bt[1]['function'].'() line('.$bt[0]['line'].')'.'</h4>';
+		$debug .=  $dump->dumpAsString($var);
+		$debug .= "</pre></div>\n";
+		Yii::app()->params['debugContent'] .=$debug;
 	}
 }

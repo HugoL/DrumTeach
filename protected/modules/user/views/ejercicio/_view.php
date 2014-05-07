@@ -3,31 +3,38 @@
 /* @var $data Ejercicio */
 ?>
 
-<div class="view">
+<div class="view well well-small">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+	<?php //echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php 
+	switch ( $data->categoria->id ) {
+		case 1:
+			$tipo = "success";
+			break;
+		case 2:
+			$tipo = "warning";
+			break;
+		case 3:
+			$tipo = "important";
+			break;
+		
+		default:
+			$tipo = "success";
+			break;
+	}
+	$this->widget('bootstrap.widgets.TbLabel', array(
+    'type'=>$tipo, // 'success', 'warning', 'important', 'info' or 'inverse'
+    'label'=>CHtml::encode($data->categoria->nombre),
+	)); ?><br/>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
-	<?php echo CHtml::encode($data->nombre); ?>
-	<br />
+	<b><?php echo CHtml::encode($data->nombre); ?></b><br/> Velocidad: 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('velocidad')); ?>:</b>
-	<?php echo CHtml::encode($data->velocidad); ?>
-	<br />
+	<?php echo CHtml::encode($data->velocidad); ?> bpm<br/>
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('observaciones')); ?>:</b>
 	<?php echo CHtml::encode($data->observaciones); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_usuario')); ?>:</b>
-	<?php echo CHtml::encode($data->id_usuario); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_categoria')); ?>:</b>
-	<?php echo CHtml::encode($data->id_categoria); ?>
-	<br />
-
+	<?php //echo CHtml::encode($data->id_usuario); ?>
 
 </div>
