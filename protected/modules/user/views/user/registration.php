@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 <h1><?php echo UserModule::t("Registration"); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('registration')): ?>
-<div class="success">
+<div class="alert alert-success">
 <?php echo Yii::app()->user->getFlash('registration'); ?>
 </div>
 <?php else: ?>
@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 <div class="form">
 <?php $form=$this->beginWidget('UActiveForm', array(
 	'id'=>'registration-form',
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'disableAjaxValidationAttributes'=>array('RegistrationForm_verifyCode'),
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),
 )); ?>
