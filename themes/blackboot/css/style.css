@@ -537,7 +537,7 @@ p.hint { float:left; display:block;}
   bottom:0px;
 }
 .footer a {
-  color: #FFF;
+  color: rgba(156, 156, 156, 1);
 }
 .footer a:hover {
   color: #FFF;

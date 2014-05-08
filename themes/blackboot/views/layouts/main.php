@@ -23,6 +23,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Hugo Langa">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <meta name="language" content="es" />
@@ -36,6 +37,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/hlanga.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 <!-- Le fav and touch icons -->
 </head>
 
@@ -92,10 +94,10 @@
 	  <div class="container">
 		<div class="row">
 			<div id="footer-copyright" class="col-md-6">
-				Sobre DrumTeach | Contáctame | Términos y Condiciones
+				Autor: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | E-mail: hlanga(arroba)hlanga.es
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
-				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
+				Diseño: © 2012-13 Black Bootstrap por <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
 			</div> <!-- /.span6 -->
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->
