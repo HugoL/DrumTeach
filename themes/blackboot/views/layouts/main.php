@@ -36,6 +36,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/hlanga.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 <!-- Le fav and touch icons -->
 </head>
 
