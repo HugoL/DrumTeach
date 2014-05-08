@@ -3,8 +3,8 @@
 /* @var $model Ejercicio */
 
 $this->breadcrumbs=array(
-	'Ejercicios'=>array('index'),
-	'Create',
+	'Ejercicios'=>array('ejerciciosCategorias'),
+	'Nuevo',
 );
 
 $this->menu=array(

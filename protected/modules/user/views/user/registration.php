@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
+	<p class="note"><?php echo UserModule::t('Los campos con <span class="required">*</span> son obligatorios.'); ?></p>
 	
 	<?php echo $form->errorSummary(array($model,$profile)); ?>
 	
@@ -52,7 +52,7 @@ $this->breadcrumbs=array(
 	</div>
 	
 <?php 
-		$profileFields=$profile->getFields();
+		/*$profileFields=$profile->getFields();
 		if ($profileFields) {
 			foreach($profileFields as $field) {
 			?>
@@ -73,7 +73,7 @@ $this->breadcrumbs=array(
 	</div>	
 			<?php
 			}
-		}
+		}*/
 ?>
 	<?php if (UserModule::doCaptcha('registration')): ?>
 	<div class="row">
@@ -89,7 +89,7 @@ $this->breadcrumbs=array(
 	<?php endif; ?>
 	
 	<div class="row submit">
-		<?php echo CHtml::submitButton(UserModule::t("Register")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Registrar"),array("class"=>"btn btn-warning")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

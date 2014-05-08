@@ -33,8 +33,17 @@ $this->breadcrumbs=array(
 			if( strcmp($ejercicio->categoria->nombre,$categoria)==0 ){ ?>
 				<div class="well well-small">
 					<b><?php echo $ejercicio->nombre; ?></b><br/>
-					<b><?php echo $ejercicio->velocidad; ?></b><br/>
-					<?php echo $ejercicio->observaciones; ?>
+					<b><?php echo $ejercicio->velocidad; ?></b>
+					<?php if( !empty( $ejercicio->observaciones) ) 
+						echo "<br/>".$ejercicio->observaciones; ?>
+					<br/><a class="btn btn-warning btn-mini" href="<?php echo "update/id/".$ejercicio->id; ?>"><i class="icon icon-pencil icon-white"></i> </a> 
+					<?php 
+					echo CHtml::link(CHtml::encode('Borrar'), array('ejercicio/delete', 'id'=>$ejercicio->id),
+					  array(
+					    'submit'=>array('ejercicio/delete', 'id'=>$ejercicio->id),
+					    'class' => 'btn btn-danger btn-mini','confirm'=>'¿Borrar el ejercicio?'
+					  )
+					); ?>
 				</div>
 			<?php }			
 		} ?>

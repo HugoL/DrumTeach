@@ -12,16 +12,16 @@ class LoginController extends Controller
 		if (Yii::app()->user->isGuest) {
 			$model=new UserLogin;
 			// collect user input data
-			if(isset($_POST['UserLogin']))
-			{
+			if(isset($_POST['UserLogin'])){
 				$model->attributes=$_POST['UserLogin'];
 				// validate user input and redirect to previous page if valid
 				if($model->validate()) {
 					$this->lastViset();
-					if (strpos(Yii::app()->user->returnUrl,'/index.php')!==false)
+					/*if (strpos(Yii::app()->user->returnUrl,'/index.php')!==false)
 						$this->redirect(Yii::app()->controller->module->returnUrl);
 					else
-						$this->redirect(Yii::app()->user->returnUrl);
+						$this->redirect(Yii::app()->user->returnUrl);*/
+						$this->redirect(Yii::app()->controller->module->returnUrl);
 				}
 			}
 			// display the login form

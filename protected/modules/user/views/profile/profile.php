@@ -1,9 +1,10 @@
 <?php $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Profile");
 $this->breadcrumbs=array(
-	UserModule::t("Profile"),
+	UserModule::t("Perfil"),
 );
-?><h2><?php echo UserModule::t('Your profile'); ?></h2>
-<?php echo $this->renderPartial('menu'); ?>
+?><h2><?php echo "Mi perfil"; ?></h2>
+<?php //echo $this->renderPartial('menu'); 
+?>
 
 <?php if(Yii::app()->user->hasFlash('profileMessage')): ?>
 <div class="success">
@@ -12,7 +13,7 @@ $this->breadcrumbs=array(
 <?php endif; ?>
 <table class="dataGrid">
 <tr>
-	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('username')); ?>
+	<th class="label"><?php echo "Usuario"; ?>
 </th>
     <td><?php echo CHtml::encode($model->username); ?>
 </td>
@@ -40,19 +41,19 @@ $this->breadcrumbs=array(
 </td>
 </tr>
 <tr>
-	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('createtime')); ?>
+	<th class="label"><?php echo "Fecha de registro"; ?>
 </th>
     <td><?php echo date("d.m.Y H:i:s",$model->createtime); ?>
 </td>
 </tr>
 <tr>
-	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('lastvisit_at')); ?>
+	<th class="label"><?php echo "Última visita"; ?>
 </th>
     <td><?php echo date("d.m.Y H:i:s",$model->lastvisit_at); ?>
 </td>
 </tr>
 <tr>
-	<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('status')); ?>
+	<th class="label"><?php echo "Estado"; ?>
 </th>
     <td><?php echo CHtml::encode(User::itemAlias("UserStatus",$model->status));
     ?>

@@ -84,17 +84,17 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'username'=>UserModule::t("username"),
-			'password'=>UserModule::t("password"),
-			'verifyPassword'=>UserModule::t("Retype Password"),
+			'username'=>UserModule::t("Usuario"),
+			'password'=>UserModule::t("Contraseña"),
+			'verifyPassword'=>UserModule::t("Repite la contraseña"),
 			'email'=>UserModule::t("E-mail"),
-			'verifyCode'=>UserModule::t("Verification Code"),
+			'verifyCode'=>UserModule::t("Código de verificación"),
 			'id' => UserModule::t("Id"),
-			'activkey' => UserModule::t("activation key"),
-			'createtime' => UserModule::t("Registration date"),
-			'lastvisit_at' => UserModule::t("Last visit"),
+			'activkey' => UserModule::t("Clave de activación"),
+			'createtime' => UserModule::t("Fecha de registro"),
+			'lastvisit_at' => UserModule::t("Última visita"),
 			'superuser' => UserModule::t("Superuser"),
-			'status' => UserModule::t("Status"),
+			'status' => UserModule::t("Estado"),
 		);
 	}
 	
