@@ -57,6 +57,7 @@
 						'activeCssClass'	=> 'active',
 						'items'=>array(
 							array('label'=>'Sobre DrumTeach', 'url'=>array('/site/page', 'view'=>'about')),
+							array('label'=>'Cómo funciona', 'url'=>array('/site/page', 'view'=>'howto')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),
 							array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Panel de usuario', 'url'=>array('/user/ejercicio/ejerciciosCategorias'), 'visible'=>!Yii::app()->user->isGuest),
