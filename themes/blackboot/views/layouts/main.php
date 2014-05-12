@@ -26,6 +26,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <meta name="language" content="es" />
+<link rel="shortcut icon" href="<?php echo Yii::app()->baseUrl.Yii::app()->params['images']; ?>favicon.ico">
 <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
