@@ -885,6 +885,16 @@
 }
 
 @media (max-width: 480px) {
+  .hero-unit h1 {
+    margin-bottom: 0;
+    font-size: 2em;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: inherit;
+  }
+  .hero-unit {
+    padding: 10px;
+  }
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0);
   }
@@ -942,7 +952,7 @@
   }
   .navbar-fixed-top,
   .navbar-fixed-bottom {
-    position: static;
+    /*position: static;*/
   }
   .navbar-fixed-top {
     margin-bottom: 20px;
@@ -960,7 +970,7 @@
   }
   .navbar .brand {
     padding-right: 10px;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     margin: 0 0 0 -5px;
   }
   .nav-collapse {
