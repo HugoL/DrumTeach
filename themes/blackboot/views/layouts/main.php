@@ -57,6 +57,7 @@
 						'items'=>array(
 							array('label'=>'Sobre DrumTeach', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Cómo funciona', 'url'=>array('/site/page', 'view'=>'howto')),
+							array('label'=>'Demostración', 'url'=>array('/site/page', 'view'=>'demo')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),
 							array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Panel de usuario', 'url'=>array('/user/ejercicio/ejerciciosCategorias'), 'visible'=>!Yii::app()->user->isGuest),
@@ -94,7 +95,7 @@
 	  <div class="container">
 		<div class="row">
 			<div id="footer-copyright" class="col-md-6">
-				Sobre DrumTeach | Contáctame | Términos y Condiciones
+				Author: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | Email: hlanga(arroba)hlanga.es
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
 				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.

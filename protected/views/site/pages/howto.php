@@ -30,6 +30,11 @@ $this->breadcrumbs=array(
 <h4>Consulta tu información</h4>
 <p>Ya tienes la información de tus ejercicios guardada. La podrás consultar y modificar durante tu clase de batería, en tu local cuando estés practicando, en tu casa o donde quieras...</p>
 <div class="clearfix">&nbsp;</div>
-<p>Si tienes alguna sugerencia o necesitas que añada más categorías o cualquier otra cosa, solo tienes que decírmelo a través del formulario de contacto o a través del email que pone en el pie de página.</p>
+<p>Puedes ver algunos ejemplos de lo que verás en el panel de usuario pinchando en <i>"<?php echo CHtml::link('Demostración',array("site/page?view=demo")); ?>"</i> en el menú superior.</p>
 </div>
+
+<div class="clearfix">&nbsp;</div>
+<p>Si tienes alguna sugerencia o quieres proponer más categorías o cualquier otra cosa, solo tienes que decírmelo a través del formulario de contacto o a través del email que pone en el pie de página.</p>
 <p></p>
+
+

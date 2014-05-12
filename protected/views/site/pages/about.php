@@ -16,6 +16,6 @@ $this->breadcrumbs=array(
 
 <p>Aunque la aplicación está destinada a mi uso personal, he decido hacerla multiusuario, para que cualquiera la pueda utilizar igual que yo.</p>
 
-<p><strong>Esto es totalmente gratis y totalmente desinteresado.</strong> No pretendo beneficiarme económicamente de esto. No existe modelo de negocio. Si te resulta útil, la usas y ya está ;-)</p>
+<p><strong>Esto es totalmente gratis.</strong> Si te resulta útil, la usas y ya está ;-)</p>
 </div>
 <p></p>
