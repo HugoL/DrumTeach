@@ -8,6 +8,20 @@ $this->breadcrumbs=array(
 ?>
 <h1>Cómo funciona</h1>
 <div class="texto">
+<p>Algunas imágenes de lo que puedes encontrar dentro de <b>DrumTeach</b>:</p>
+
+<div class="clearfix">&nbsp;</div>
+<center><div class="thumbnail"><img src="<?php echo Yii::app()->baseUrl.Yii::app()->params['images'] ?>demo_movil.png" /><br/>
+<p>Listado de ejercicios organizado por categorías. El diseño se adapta a cualquier tamaño de pantalla para que se vea correctamente en los dispósitivos móviles.</p></div>
+
+<div class="clearfix">&nbsp;</div>
+<center><div class="thumbnail"><img src="<?php echo Yii::app()->baseUrl.Yii::app()->params['images'] ?>demo_ejercicio_nuevo.png" /><br/>
+<p>El usuario introduce un ejercicio nuevo.</p></div>
+<div class="clearfix">&nbsp;</div>
+
+<p></p>
+</div>
+<div class="texto">
 <p>Utilizar <b>DrumTeach</b> es realmente fácil. Sigue estos pasos:</p>
 
 <div class="clearfix">&nbsp;</div>
@@ -29,7 +43,7 @@ $this->breadcrumbs=array(
 <div class="clearfix">&nbsp;</div>
 <h4>Consulta tu información</h4>
 <p>Ya tienes la información de tus ejercicios guardada. La podrás consultar y modificar durante tu clase de batería, en tu local cuando estés practicando, en tu casa o donde quieras...</p>
+
 <div class="clearfix">&nbsp;</div>
-<p>Si tienes alguna sugerencia o necesitas que añada más categorías o cualquier otra cosa, solo tienes que decírmelo a través del formulario de contacto o a través del email que pone en el pie de página.</p>
-</div>
+<p>Si tienes alguna sugerencia o quieres proponer más categorías o cualquier otra cosa, solo tienes que decírmelo a través del formulario de contacto o a través del email que pone en el pie de página.</p>
 <p></p>

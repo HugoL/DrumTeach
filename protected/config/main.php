@@ -79,6 +79,8 @@ return array(
         ),
 		// uncomment the following to enable the Gii tool
 		
+		/* 
+		//ESTO DEBE DE ESTAR COMENTADO EN EL SERVIDOR
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
@@ -88,7 +90,7 @@ return array(
                 'bootstrap.gii',
 			),
 		
-		),
+		),*/
 
     ),
 

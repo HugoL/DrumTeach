@@ -27,6 +27,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <meta name="language" content="es" />
+<link rel="shortcut icon" href="<?php echo Yii::app()->baseUrl.Yii::app()->params['images']; ?>favicon.ico">
 <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -95,7 +96,11 @@
 	  <div class="container">
 		<div class="row">
 			<div id="footer-copyright" class="col-md-6">
+<<<<<<< HEAD
 				Autor: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | E-mail: hlanga(arroba)hlanga.es
+=======
+				Author: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | Email: hlanga(arroba)hlanga.es
+>>>>>>> 9e6fb8fe5db8811c32893b71b08e8686555e94be
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
 				Diseño: © 2012-13 Black Bootstrap por <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
