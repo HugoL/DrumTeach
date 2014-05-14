@@ -23,7 +23,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="author" content="Hugo Langa">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <meta name="language" content="es" />
@@ -96,14 +95,10 @@
 	  <div class="container">
 		<div class="row">
 			<div id="footer-copyright" class="col-md-6">
-<<<<<<< HEAD
-				Autor: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | E-mail: hlanga(arroba)hlanga.es
-=======
 				Author: <a href="http://www.hlanga.es" target="_blank">Hugo Langa</a> | Twitter: <a href="https://www.twitter.com/HugoLanga" target="_blank">@HugoLanga</a> | Email: hlanga(arroba)hlanga.es
->>>>>>> 9e6fb8fe5db8811c32893b71b08e8686555e94be
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
-				Diseño: © 2012-13 Black Bootstrap por <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
+				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
 			</div> <!-- /.span6 -->
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->

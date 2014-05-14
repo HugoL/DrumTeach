@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 <p>Algunas imágenes de lo que puedes encontrar dentro de <b>DrumTeach</b>:</p>
 
 <div class="clearfix">&nbsp;</div>
-<center><div class="thumbnail"><img src="<?php echo Yii::app()->baseUrl.Yii::app()->params['images'] ?>demo_movil.png" /><br/>
+<center><div class="thumbnail"><img src="<?php echo Yii::app()->baseUrl.Yii::app()->params['images'] ?>demo_movil_control_fechas.png" /><br/>
 <p>Listado de ejercicios organizado por categorías. El diseño se adapta a cualquier tamaño de pantalla para que se vea correctamente en los dispósitivos móviles.</p></div>
 
 <div class="clearfix">&nbsp;</div>
@@ -43,6 +43,7 @@ $this->breadcrumbs=array(
 <div class="clearfix">&nbsp;</div>
 <h4>Consulta tu información</h4>
 <p>Ya tienes la información de tus ejercicios guardada. La podrás consultar y modificar durante tu clase de batería, en tu local cuando estés practicando, en tu casa o donde quieras...</p>
+<p>Además, DrumTeach controla la fecha en la que modificaste por última vez la velocidad de cada ejercicio y te muestra diferentes alertas para que tengas controlados todos tus ejercicios.</p>
 
 <div class="clearfix">&nbsp;</div>
 <p>Si tienes alguna sugerencia o quieres proponer más categorías o cualquier otra cosa, solo tienes que decírmelo a través del formulario de contacto o a través del email que pone en el pie de página.</p>

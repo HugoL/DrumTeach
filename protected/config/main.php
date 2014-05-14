@@ -72,16 +72,14 @@ return array(
             'loginUrl' => array('/user/login'),
  
             # page after login
-            'returnUrl' => array('/user/profile'),
+            'returnUrl' => array('/user/ejercicio/ejerciciosCategorias'),
  
             # page after logout
             'returnLogoutUrl' => array('/user/login'),
         ),
 		// uncomment the following to enable the Gii tool
 		
-		/* 
-		//ESTO DEBE DE ESTAR COMENTADO EN EL SERVIDOR
-		'gii'=>array(
+		/*'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
