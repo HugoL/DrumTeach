@@ -29,17 +29,20 @@ $this->breadcrumbs=array(
     'htmlOptions' => array('class'=>'ui-button-primary'),
     'onclick'=>new CJavaScriptExpression('function(this){ $("#this.name").fadeIn(); }'),
     )); */?>
-
+    	<?php
+    	//nombre de la categoría sin espacios 
+    	$cat = str_replace(" ","",$categoria); 
+    	?>
     	<?php $this->widget('bootstrap.widgets.TbButton', array(
     		'buttonType'=>'button',
     		'type'=>'warning',    		
     		'label'=>$categoria,
     		'size'=>'large',
     		'toggle'=>true,
-    		'htmlOptions'=>array('class'=>'boton','onclick'=>'javascript:mostrar();', 'name'=>$categoria),
+    		'htmlOptions'=>array('class'=>'boton','onclick'=>'javascript:mostrar();', 'name'=>$cat),
 		)); ?>
 		
-	    <div class="well" id="<?php echo $categoria ?>" style="display:none">
+	    <div class="well" id="<?php echo $cat; ?>" style="display:none">
 	    <?php foreach ($ejercicios as $key => $ejercicio) {
 			if( strcmp($ejercicio->categoria->nombre,$categoria)==0 ){ ?>
 				<?php 
