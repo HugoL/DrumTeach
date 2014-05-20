@@ -26,3 +26,5 @@ $this->menu=array(
 		'observaciones',		
 	),
 )); ?>
+<div class="clearfix">&nbsp;</div>
+<?php echo CHtml::link('Volver a Mis ejercicios',array('ejercicio/ejerciciosCategorias'),array('class'=>'btn btn-warning')) ?>

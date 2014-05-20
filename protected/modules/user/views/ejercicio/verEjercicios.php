@@ -75,12 +75,16 @@ $this->breadcrumbs=array(
 				?>
 				<?php $form=$this->beginWidget('CActiveForm', array(					
 					'enableAjaxValidation'=>false,
-					'action'=>array('ejercicio/update'),
+					'action'=>array('ejercicio/update/id/'.$ejercicio->id),
+					'htmlOptions'=>array('class'=>'form form-horizontal'),
 					)); ?>
 				<div class="well well-small">
 					<?php echo $form->hiddenField($ejercicio,'id'); ?>
 					<b><?php echo $ejercicio->nombre; ?></b><br/>
-					<div class="clearfix"><?php echo $form->textField($ejercicio,'velocidad',array('size'=>20,'maxlength'=>128)); ?> bpm</div>
+					<div class="clearfix">					
+						<div ><?php echo $form->textField($ejercicio,'velocidad',array('size'=>20,'maxlength'=>128,'class'=>'input-mini'));
+					 	echo CHtml::submitButton('Guardar',array('class'=>'btn btn-mini btn-inverse guardar'));?></div>
+					 </div>
 					Fecha: <span class="label label-<?php echo $label; ?>"><?php echo $fecha; ?></span>
 					<?php if( !empty( $ejercicio->observaciones) ) 
 						echo "<br/>".$ejercicio->observaciones; ?>
