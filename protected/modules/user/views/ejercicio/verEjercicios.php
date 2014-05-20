@@ -18,11 +18,6 @@ $this->breadcrumbs=array(
 </div>
 <div class="alert alert-info">Pincha en el botón de la categoría para ver u ocultar los ejercicios</div>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'ejercicio-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
 
 <?php foreach ($categorias as $key => $categoria) { ?>
 		<div class="clearfix">
@@ -75,7 +70,12 @@ $this->breadcrumbs=array(
 					}
 					    					
 				?>
+				<?php $form=$this->beginWidget('CActiveForm', array(					
+					'enableAjaxValidation'=>false,
+					'action'=>array('ejercicio/update'),
+					)); ?>
 				<div class="well well-small">
+					<?php echo $form->hiddenField($ejercicio,'id'); ?>
 					<b><?php echo $ejercicio->nombre; ?></b><br/>
 					<div class="clearfix"><?php echo $form->textField($ejercicio,'velocidad',array('size'=>20,'maxlength'=>128)); ?> bpm</div>
 					Fecha: <span class="label label-<?php echo $label; ?>"><?php echo $fecha; ?></span>
@@ -91,13 +91,13 @@ $this->breadcrumbs=array(
 					  )
 					); ?>
 				</div>
+				<?php $this->endWidget(); ?>
+
 			<?php }			
 		} ?>
 		</div><hr>
 		</div>
 <?php } ?>
-<?php $this->endWidget(); ?>
-
 <script>
 $(document).ready(function() {
 	$("div.well").fadeOut;
