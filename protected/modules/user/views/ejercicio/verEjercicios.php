@@ -16,6 +16,13 @@ $this->breadcrumbs=array(
     Control de fechas:</strong> <label class="label label-success">Menos de 2 semanas</label> <label class="label label-info">Menos de 4 semanas</label> <label class="label label-warning">Menos de 6 semanas</label> <label class="label label-important">Menos de 8 semanas</label> <label class="label label-inverse">Más de 8 semanas</label>
 	</div>
 </div>
+<div class="alert alert-info">Pincha en el botón de la categoría para ver u ocultar los ejercicios</div>
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'ejercicio-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+
 
 <?php foreach ($categorias as $key => $categoria) { ?>
 		<div class="clearfix">
@@ -28,15 +35,16 @@ $this->breadcrumbs=array(
     'onclick'=>new CJavaScriptExpression('function(this){ $("#this.name").fadeIn(); }'),
     )); */?>
 
-		<?php $this->widget('bootstrap.widgets.TbButtonGroup', array(
-	        'type'=>'warning', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'	        
-	        'buttons'=>array(
-	            array('label'=>$categoria, 'items'=>array(
-	                array('label'=>'Action', 'url'=>'#'),	                
-	            )),
-	        ),
-	    )); ?>
-	    <div class="well" id="<?php echo $categoria ?>">
+    	<?php $this->widget('bootstrap.widgets.TbButton', array(
+    		'buttonType'=>'button',
+    		'type'=>'warning',    		
+    		'label'=>$categoria,
+    		'size'=>'large',
+    		'toggle'=>true,
+    		'htmlOptions'=>array('class'=>'boton','onclick'=>'javascript:mostrar();', 'name'=>$categoria),
+		)); ?>
+		
+	    <div class="well" id="<?php echo $categoria ?>" style="display:none">
 	    <?php foreach ($ejercicios as $key => $ejercicio) {
 			if( strcmp($ejercicio->categoria->nombre,$categoria)==0 ){ ?>
 				<?php 
@@ -69,8 +77,8 @@ $this->breadcrumbs=array(
 				?>
 				<div class="well well-small">
 					<b><?php echo $ejercicio->nombre; ?></b><br/>
-					<b><?php echo $ejercicio->velocidad; ?></b> bpm<br/>
-					Fecha: <label class="label label-<?php echo $label; ?>"><?php echo $fecha; ?></label>
+					<div class="clearfix"><?php echo $form->textField($ejercicio,'velocidad',array('size'=>20,'maxlength'=>128)); ?> bpm</div>
+					Fecha: <span class="label label-<?php echo $label; ?>"><?php echo $fecha; ?></span>
 					<?php if( !empty( $ejercicio->observaciones) ) 
 						echo "<br/>".$ejercicio->observaciones; ?>
 					
@@ -85,14 +93,20 @@ $this->breadcrumbs=array(
 				</div>
 			<?php }			
 		} ?>
-		</div>
+		</div><hr>
 		</div>
 <?php } ?>
+<?php $this->endWidget(); ?>
 
 <script>
-$().ready(function(){
-    $('#myButton').click(function(){
-        $('#myDiv').toggleClass('hidden');
-    });
+$(document).ready(function() {
+	$("div.well").fadeOut;
+	$(".boton").click( function() {
+		if( $(this).hasClass('active') ){
+			$("#"+this.name).fadeOut("slow");							
+		}else{
+			$("#"+this.name).fadeIn("slow");			
+		}		
+	});
 });
 </script>
