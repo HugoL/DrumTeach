@@ -41,7 +41,6 @@ $this->breadcrumbs=array(
     		'toggle'=>true,
     		'htmlOptions'=>array('class'=>'boton','onclick'=>'javascript:mostrar();', 'name'=>$cat),
 		)); ?>
-		
 	    <div class="well" id="<?php echo $cat; ?>" style="display:none">
 	    <?php foreach ($ejercicios as $key => $ejercicio) {
 			if( strcmp($ejercicio->categoria->nombre,$categoria)==0 ){ ?>

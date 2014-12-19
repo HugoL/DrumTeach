@@ -72,7 +72,7 @@ class EjercicioController extends Controller
 			$model->attributes=$_POST['Ejercicio'];
 			$model->id_usuario = Yii::app()->user->id;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('ejerciciosCategorias'));
 		}
 
 		$this->render('create',array(
@@ -99,7 +99,7 @@ class EjercicioController extends Controller
 				$model->fecha = date("Y-m-d H:i:s");
 			}			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('ejerciciosCategorias', 'catvisible' => str_replace(" ","",$model->categoria->nombre)));
 		}
 
 		$this->render('update',array(
@@ -154,7 +154,7 @@ class EjercicioController extends Controller
 		));
 	}
 
-	public function actionEjerciciosCategorias()
+	public function actionEjerciciosCategorias( $catvisible = null)
 	{
 		/*$ejercicios=new CActiveDataProvider('Ejercicio',array(
     			'criteria'=>array(
