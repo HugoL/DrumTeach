@@ -18,7 +18,9 @@ $this->breadcrumbs=array(
 </div>
 <div class="alert alert-info">Pincha en el botón de la categoría para ver u ocultar los ejercicios</div>
 
-
+<?php if( empty($categorias) ): ?>
+	<div class="alert alert-danger"><b>Todavía no tienes ningún ejercicio guardado</b>.<br/> Pulsa en <b>"Nuevo ejercicio"</b> del menú para comenzar.</div>
+<?php endif; ?>
 <?php foreach ($categorias as $key => $categoria) { ?>
 		<div class="clearfix">
 	<?php /*$this->widget('zii.widgets.jui.CJuiButton', array(

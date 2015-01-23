@@ -149,7 +149,7 @@ div.errorMessage {
 
 input[type="button"],
 input[type="submit"]{
-  margin-left:140px; 
+  margin-left:10px; 
   color: #ffffff;
   background-color: #000;
   display: inline-block;

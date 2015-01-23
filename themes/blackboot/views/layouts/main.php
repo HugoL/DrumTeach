@@ -37,7 +37,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/hlanga.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 <!-- Le fav and touch icons -->
 </head>
 
@@ -59,9 +58,9 @@
 							array('label'=>'Sobre DrumTeach', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Cómo funciona', 'url'=>array('/site/page', 'view'=>'howto')),
 							array('label'=>'Contacto', 'url'=>array('/site/contact')),
-							array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
+							array('label'=>'Acceso Usuarios', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 							array('label'=>'Panel de usuario', 'url'=>array('/user/ejercicio/ejerciciosCategorias'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),					
+							array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),					
 						),
 					)); ?>
 					
@@ -103,8 +102,6 @@
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->
 	</div>
-	<?php if(!empty(Yii::app()->params['debugContent'])):?>
-                <?php echo Yii::app()->params['debugContent'];?>
-	<?php endif;?>
+	<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
 </html>
